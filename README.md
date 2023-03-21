@@ -1,3 +1,9 @@
+```json
+
+node build.js --runtime electron --version 19.1.9 --abi 106
+ //Put `iohook.node` and `uihook.dll` (or `.so` or `.dylib`, depending on your operating system) into the `builds` directory as expected by iohook. See again the error message for details about the directory structure.
+```
+
 # iohook-build
 
 This repository contains an augmented copy of the npm release of `iohook`(<https://www.npmjs.com/package/iohook>) in version 0.9.3, downloaded on 19th November 2021. This repository is not intended for general use but serves me as medium to build another project. The need for this repository is caused by the approach for deployment of the `iohook` module. The core of that module is written in native code, which must be compiled for each combination of operating system, cpu architecture, Node.js, and Electron version. In my project, I require support for at least both Windows x86_64 bit and macOS ARM64 and a specific Electron version. As there exist no prebuilt binaries for these combinations and the unavailable prebuilt binaries cause `npm install iohook` even to fails on macOS, I have decided to create this repository that mocks a release of the iohook that can be easily integrated into the standard npm / Node.js workflow. See an issue I commented on in the `iohook` repository on GitHub: <https://github.com/wilix-team/iohook/issues/315#issuecomment-972921484>
